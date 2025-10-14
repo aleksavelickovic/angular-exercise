@@ -1,0 +1,22 @@
+<form [formGroup]="createWineForm" xmlns="http://www.w3.org/1999/html">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput name="name" type="text"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input formControlName="description" matInput name="description" type="text"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input formControlName="year" matInput name="year" type="number"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Grapes</mat-label>
+    <input formControlName="grapes" matInput name="grapes" type="text"/>
+  </mat-form-field>
+  <!--  <input type="submit" content="Create"/>-->
+</form>
+<div id="button">
+  <button (click)="create()" matButton="filled">Create</button>
+</div>
