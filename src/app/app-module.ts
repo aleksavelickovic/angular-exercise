@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Test } from './test/test';
+import {WineModule} from './wine/wine-module';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Test
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WineModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
