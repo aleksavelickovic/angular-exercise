@@ -1,29 +1,32 @@
 import {Injectable} from '@angular/core';
 import {Wine} from './model/wine';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {enviroment} from '../env/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WineService {
   private wines: Wine[] = [
-    {name: 'Syrah', grape: 'Riesling', description: 'Fruity and full-bodied.', year: 2004},
-    {name: 'Sangiovese', grape: 'Riesling', description: 'Fruity and full-bodied.', year: 2019},
-    {name: 'Moscato', grape: 'Riesling', description: 'Sweet and aromatic.', year: 2019},
-    {name: 'Malbec', grape: 'Merlot', description: 'Light and floral.', year: 2006},
-    {name: 'Syrah', grape: 'Malbec', description: 'Fruity and full-bodied.', year: 2013},
-    {name: 'Zinfandel', grape: 'Chardonnay', description: 'Fruity and full-bodied.', year: 2016},
-    {name: 'Pinot Noir', grape: 'Chardonnay', description: 'A rich and creamy wine.', year: 2015},
-    {name: 'Viognier', grape: 'Cabernet Sauvignon', description: 'Dry with a long finish.', year: 2018},
-    {name: 'Zinfandel', grape: 'Syrah', description: 'Smooth and velvety.', year: 2016},
-    {name: 'Pinot Noir', grape: 'Merlot', description: 'Earthy and complex.', year: 2021},
-    {name: 'Pinot Noir', grape: 'Cabernet Sauvignon', description: 'Fruity and full-bodied.', year: 2023},
-    {name: 'Pinot Noir', grape: 'Merlot', description: 'Earthy and complex.', year: 2002},
-    {name: 'Sauvignon Blanc', grape: 'Merlot', description: 'Dry with a long finish.', year: 2011},
-    {name: 'Zinfandel', grape: 'Zinfandel', description: 'A rich and creamy wine.', year: 2015},
-    {name: 'Moscato', grape: 'Zinfandel', description: 'Crisp and refreshing.', year: 2005}
+    // {name: 'Syrah', grape: 'Riesling', description: 'Fruity and full-bodied.', year: 2004},
+    // {name: 'Sangiovese', grape: 'Riesling', description: 'Fruity and full-bodied.', year: 2019},
+    // {name: 'Moscato', grape: 'Riesling', description: 'Sweet and aromatic.', year: 2019},
+    // {name: 'Malbec', grape: 'Merlot', description: 'Light and floral.', year: 2006},
+    // {name: 'Syrah', grape: 'Malbec', description: 'Fruity and full-bodied.', year: 2013},
+    // {name: 'Zinfandel', grape: 'Chardonnay', description: 'Fruity and full-bodied.', year: 2016},
+    // {name: 'Pinot Noir', grape: 'Chardonnay', description: 'A rich and creamy wine.', year: 2015},
+    // {name: 'Viognier', grape: 'Cabernet Sauvignon', description: 'Dry with a long finish.', year: 2018},
+    // {name: 'Zinfandel', grape: 'Syrah', description: 'Smooth and velvety.', year: 2016},
+    // {name: 'Pinot Noir', grape: 'Merlot', description: 'Earthy and complex.', year: 2021},
+    // {name: 'Pinot Noir', grape: 'Cabernet Sauvignon', description: 'Fruity and full-bodied.', year: 2023},
+    // {name: 'Pinot Noir', grape: 'Merlot', description: 'Earthy and complex.', year: 2002},
+    // {name: 'Sauvignon Blanc', grape: 'Merlot', description: 'Dry with a long finish.', year: 2011},
+    // {name: 'Zinfandel', grape: 'Zinfandel', description: 'A rich and creamy wine.', year: 2015},
+    // {name: 'Moscato', grape: 'Zinfandel', description: 'Crisp and refreshing.', year: 2005}
   ];
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     // const names = ['Chardonnay', 'Merlot', 'Cabernet Sauvignon', 'Pinot Noir', 'Sauvignon Blanc', 'Syrah', 'Riesling', 'Zinfandel', 'Malbec', 'Tempranillo', 'Grenache', 'Sangiovese', 'Barbera', 'Viognier', 'Moscato'];
     // const grapes = ['Chardonnay', 'Merlot', 'Cabernet Sauvignon', 'Pinot Noir', 'Sauvignon Blanc', 'Syrah', 'Riesling', 'Zinfandel', 'Malbec', 'Tempranillo'];
     // const descriptions = [
@@ -47,13 +50,19 @@ export class WineService {
     //
     //   this.wines.push({name, description, year, grape});
     // }
+
   }
 
-  public getAllWines(): Wine[] {
-    return this.wines;
+  public getAllWines(): Observable<Wine[]> {
+    return this.httpClient.get<Wine[]>(enviroment.apiHost + '/wines');
   }
 
   public addWine(wine: Wine): void {
     this.wines.push(wine)
   }
+
+  // getOne(id: number): Wine {
+  //
+  //
+  // }
 }

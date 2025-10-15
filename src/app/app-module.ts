@@ -6,6 +6,7 @@ import {App} from './app';
 import {Test} from './test/test';
 import {WineModule} from './wine/wine-module';
 import {LayoutModule} from './layout/layout-module';
+import {provideHttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {LayoutModule} from './layout/layout-module';
     LayoutModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient()
   ],
   bootstrap: [App]
 })

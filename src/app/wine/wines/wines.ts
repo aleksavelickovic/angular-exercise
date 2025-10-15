@@ -17,6 +17,14 @@ export class Wines implements OnInit {
   }
 
   ngOnInit(): void {
-    this.wines = this.service.getAllWines();
+    this.service.getAllWines().subscribe({
+      next: (wines: Wine[]) => {
+        this.wines = wines
+        console.log(wines)
+      },
+      error: (_) => {
+        console.log("Greska!")
+      }
+    })
   }
 }

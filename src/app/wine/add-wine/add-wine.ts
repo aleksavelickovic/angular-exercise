@@ -26,7 +26,7 @@ export class AddWine {
       let wine: Wine = {
         name: this.createWineForm.value.name,
         year: this.createWineForm.value.year,
-        grape: this.createWineForm.value.grapes,
+        grapes: this.createWineForm.value.grapes,
         description: this.createWineForm.value.description
       }
       console.log(wine)

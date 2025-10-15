@@ -9,25 +9,15 @@
   </tr>
   </thead>
   <tbody>
-  <!--  <tr>-->
-  <!--    <td>Vino 1</td>-->
-  <!--    <td>Sorta 1</td>-->
-  <!--    <td>Opis 1</td>-->
-  <!--    <td>2009</td>-->
-  <!--  </tr>-->
-  <!--  <tr>-->
-  <!--    <td>Vino 2</td>-->
-  <!--    <td>Sorta 2</td>-->
-  <!--    <td>Opis 2</td>-->
-  <!--    <td>2012</td>-->
-  <!--  </tr>-->
 
-  <tr *ngFor="let wine of wines">
-    <td>{{ wine.name }}</td>
-    <td>{{ wine.grape }}</td>
-    <td>{{ wine.description }}</td>
-    <td>{{ wine.year }}</td>
-  </tr>
+    @for (wine of wines; track wine) {
+      <tr>
+        <td>{{ wine.name }}</td>
+        <td>{{ wine.grapes }}</td>
+        <td>{{ wine.description }}</td>
+        <td>{{ wine.year }}</td>
+      </tr>
+    }
 
   </tbody>
 </table>
