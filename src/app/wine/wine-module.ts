@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {Wines} from './wines/wines';
 import {AddWine} from './add-wine/add-wine';
 import {MaterialModule} from '../infrastructure/material/material-module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MaterialModule} from '../infrastructure/material/material-module';
     // ReactiveFormsModule
     MaterialModule,
     // ReactiveFormsModule
+    RouterModule
   ]
 })
 export class WineModule {
