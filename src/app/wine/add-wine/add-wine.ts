@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Wine} from '../model/wine';
 import {WineService} from '../wine-service';
 import {Router} from '@angular/router';
@@ -18,7 +18,7 @@ export class AddWine {
     grapes: new FormControl(),
     description: new FormControl(),
     country: new FormControl(),
-    region: new FormControl()
+    region: new FormControl("Republika Srbija", [Validators.required])
   })
 
   constructor(private service: WineService, private router: Router) {
@@ -32,7 +32,7 @@ export class AddWine {
         grapes: this.createWineForm.value.grapes,
         description: this.createWineForm.value.description,
         country: this.createWineForm.value.country,
-        region: this.createWineForm.value.region
+        region: this.createWineForm.value.region ?? ''
       }
       console.log(wine)
       this.service.addWine(wine).subscribe({
