@@ -1,4 +1,4 @@
-<mat-card (click)="onWineClicked()">
+<mat-card (click)="onWineClicked()" [routerLink]="['/wine', wine?.id]">
   <mat-card-content>
     <b>{{ wine?.name }}</b>
     <br>

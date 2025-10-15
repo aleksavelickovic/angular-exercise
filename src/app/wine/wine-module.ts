@@ -7,6 +7,8 @@ import {RouterModule} from '@angular/router';
 import {WineCards} from './wine-cards/wine-cards';
 import {WineCard} from './wine-card/wine-card';
 import {MatCardContent} from '@angular/material/card';
+import {WineDetails} from './wine-details/wine-details';
+import {MatTab, MatTabGroup} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import {MatCardContent} from '@angular/material/card';
     Wines,
     AddWine,
     WineCards,
-    WineCard
+    WineCard,
+    WineDetails
   ],
   exports: [
     Wines,
@@ -30,6 +33,8 @@ import {MatCardContent} from '@angular/material/card';
     // ReactiveFormsModule
     RouterModule,
     MatCardContent,
+    MatTabGroup,
+    MatTab,
   ]
 })
 export class WineModule {

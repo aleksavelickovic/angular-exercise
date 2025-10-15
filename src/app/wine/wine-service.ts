@@ -61,8 +61,8 @@ export class WineService {
     return this.httpClient.post<Wine>(enviroment.apiHost + '/add', wine);
   }
 
-  // getOne(id: number): Wine {
-  //
-  //
-  // }
+  getOne(id: number): Observable<Wine> {
+    return this.httpClient.get<Wine>(enviroment.apiHost + '/wines/' + id)
+
+  }
 }
