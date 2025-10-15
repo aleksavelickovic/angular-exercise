@@ -23,7 +23,7 @@ export class Wines implements OnInit {
         console.log(wines)
       },
       error: (_) => {
-        console.log("Greska!")
+        console.error("Greska!")
       }
     })
   }
