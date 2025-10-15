@@ -1,8 +1,9 @@
 <mat-toolbar style="background-color: blue">
-  <span [routerLink]="">
+  <span [routerLink]="['home']">
     Wine Aplikacija
   </span>
   <div>
+    <button [routerLink]="['home']" matButton="tonal">Home</button>
     <button [routerLink]="['wines']" matButton="elevated">
       Wines
     </button>
