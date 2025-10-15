@@ -1,10 +1,11 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule, provideBrowserGlobalErrorListeners} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
-import { Test } from './test/test';
+import {AppRoutingModule} from './app-routing-module';
+import {App} from './app';
+import {Test} from './test/test';
 import {WineModule} from './wine/wine-module';
+import {LayoutModule} from './layout/layout-module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {WineModule} from './wine/wine-module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WineModule
+    WineModule,
+    LayoutModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
