@@ -14,6 +14,9 @@
   <mat-form-field>
     <mat-label>Grapes</mat-label>
     <input formControlName="grapes" matInput name="grapes" type="text"/>
+    @if (createWineForm.get('grapes')?.hasError('pattern')) {
+      <div>Neophodno je napisati prvo veliko slovo!</div>
+    }
   </mat-form-field>
   <mat-form-field>
     <mat-label>Country</mat-label>
