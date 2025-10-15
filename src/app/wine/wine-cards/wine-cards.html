@@ -1,13 +1,18 @@
+<h3>Kliknuto na: {{ clickedWine?.name }} - Godina: {{ clickedWine?.year }} - Sorta: {{ clickedWine?.grapes }}</h3>
+
 @for (wine of wines; track wine) {
-  <mat-card>
-    <mat-card-content>
-      <b>{{ wine.name }}</b>
-      <br>
-      <b>{{ wine.country }}</b>
-      <br>
-      <b>{{ wine.grapes }}</b>
-      <br>
-      <b>{{ wine.year }}</b>
-    </mat-card-content>
-  </mat-card>
+  <app-wine-card (clicked)="onWineClicked($event)" [wine]="wine"></app-wine-card>
+
+  <!--  <mat-card (click)="getAllWines()">-->
+    <!--  <mat-card>-->
+    <!--    <mat-card-content>-->
+    <!--      <b>{{ wine.name }}</b>-->
+    <!--      <br>-->
+    <!--      <b>{{ wine.country }}</b>-->
+    <!--      <br>-->
+    <!--      <b>{{ wine.grapes }}</b>-->
+    <!--      <br>-->
+    <!--      <b>{{ wine.year }}</b>-->
+    <!--    </mat-card-content>-->
+    <!--  </mat-card>-->
 }

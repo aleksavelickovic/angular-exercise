@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Wine} from '../model/wine';
 
 @Component({
   selector: 'app-wine-card',
@@ -8,4 +9,14 @@ import {Component} from '@angular/core';
 })
 export class WineCard {
 
+  @Input()
+  wine?: Wine
+
+  @Output()
+  clicked: EventEmitter<Wine> = new EventEmitter<Wine>();
+
+  onWineClicked(): void {
+    console.log(this.wine)
+    this.clicked.emit(this.wine)
+  }
 }

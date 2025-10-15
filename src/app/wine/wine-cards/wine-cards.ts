@@ -10,7 +10,8 @@ import {Wine} from '../model/wine';
 })
 export class WineCards implements OnInit {
 
-  wines: Wine[] = []
+  wines: Wine[] = [];
+  clickedWine?: Wine;
 
   constructor(private service: WineService) {
   }
@@ -27,6 +28,10 @@ export class WineCards implements OnInit {
         console.log(wines)
       }
     })
+  }
+
+  onWineClicked(wine: Wine): void {
+    this.clickedWine = wine;
   }
 
 }
