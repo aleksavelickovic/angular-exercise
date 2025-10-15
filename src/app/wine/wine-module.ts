@@ -4,12 +4,17 @@ import {Wines} from './wines/wines';
 import {AddWine} from './add-wine/add-wine';
 import {MaterialModule} from '../infrastructure/material/material-module';
 import {RouterModule} from '@angular/router';
+import {WineCards} from './wine-cards/wine-cards';
+import {WineCard} from './wine-card/wine-card';
+import {MatCardContent} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
     Wines,
-    AddWine
+    AddWine,
+    WineCards,
+    WineCard
   ],
   exports: [
     Wines,
@@ -23,7 +28,8 @@ import {RouterModule} from '@angular/router';
     // ReactiveFormsModule
     MaterialModule,
     // ReactiveFormsModule
-    RouterModule
+    RouterModule,
+    MatCardContent,
   ]
 })
 export class WineModule {

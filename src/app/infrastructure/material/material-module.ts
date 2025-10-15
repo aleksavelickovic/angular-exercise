@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButton} from '@angular/material/button';
 import {MatToolbar} from '@angular/material/toolbar';
 import {RouterLink} from '@angular/router';
+import {MatCard} from '@angular/material/card';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {RouterLink} from '@angular/router';
     MatButton,
     MatToolbar,
     RouterLink,
-    MatButton
+    MatButton,
+    MatCard
   ],
   exports: [
     MatFormField,
@@ -27,7 +29,8 @@ import {RouterLink} from '@angular/router';
     MatButton,
     MatToolbar,
     RouterLink,
-    MatButton
+    MatButton,
+    MatCard
   ]
 })
 export class MaterialModule {
