@@ -17,7 +17,7 @@ export class WineDetails implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const id = +params['id']
+      const id: number = params['id']
       this.service.getOne(id).subscribe({
         next: (wine: Wine) => {
           this.wine = wine

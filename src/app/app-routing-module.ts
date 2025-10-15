@@ -11,7 +11,9 @@ const routes: Routes = [
   {component: AddWine, path: 'add'},
   {component: Home, path: 'home'},
   {component: WineCards, path: 'winecards'},
-  {component: WineDetails, path: 'wine/:id'}
+  {component: WineDetails, path: 'wine/:id'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({
